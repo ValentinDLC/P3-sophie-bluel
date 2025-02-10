@@ -20,7 +20,7 @@ form.addEventListener("submit", function (event) {
     password: password.value,
   };
 
-  fetch("http://localhost:5678/api/users/login", {
+  fetch("https://p3-sophie-bluel-dun.vercel.app/api/users/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
