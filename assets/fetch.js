@@ -71,7 +71,7 @@ const elements = {
   // Récupère les travaux en fonction d'une catégorie
   const getWorks = async (categoryId = null) => {
     try {
-      const projects = await fetchData("http://localhost:5678/api/works");
+      const projects = await fetchData("https://p3-sophie-bluel-dun.vercel.app/api/works");
       const filteredProjects = categoryId
         ? projects.filter(project => project.category.id == categoryId)
         : projects;
@@ -92,7 +92,7 @@ const elements = {
   // Récupère les catégories
   const getCategories = async () => {
     try {
-      const categories = await fetchData("http://localhost:5678/api/categories");
+      const categories = await fetchData("https://p3-sophie-bluel-dun.vercel.app/api/categories");
       const buttonFragment = createElements(categories, createButton);
       const optionFragment = createElements(categories, createOption);
   
@@ -150,7 +150,7 @@ const elements = {
   // Supprime un travail
   const deleteWork = async (workID) => {
     try {
-      await fetch(`http://localhost:5678/api/works/${workID}`, {
+      await fetch(`https://p3-sophie-bluel-dun.vercel.app/api/works/${workID}`, {
         method: "DELETE",
         headers: {
           "content-type": "application/json",
@@ -220,7 +220,7 @@ const elements = {
   // Ajoute un travail
   const addWorks = async (formData) => {
     try {
-      const response = await fetch("http://localhost:5678/api/works", {
+      const response = await fetch("https://p3-sophie-bluel-dun.vercel.app/api/works", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${token}`,
